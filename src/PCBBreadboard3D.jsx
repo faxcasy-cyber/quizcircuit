@@ -359,7 +359,7 @@ function Led({ part, glow, hl }) {
 function Transistor({ part, glow, hl }) {
   const geo = useMemo(() => {
     const r = 0.95, f = 0.62, a = Math.asin(f / r); const s = new THREE.Shape();
-    s.moveTo(r * Math.cos(a), -f); s.absArc(0, 0, r, -a, Math.PI + a, false); s.closePath();
+    s.moveTo(r * Math.cos(a), -f); s.absarc(0, 0, r, -a, Math.PI + a, false); s.closePath();
     const g = new THREE.ExtrudeGeometry(s, { depth: 1.9, bevelEnabled: false, curveSegments: 28 }); g.rotateX(-Math.PI / 2); return g;
   }, []);
   const mid = part.pins[1].hole; const Y = 1.0;
